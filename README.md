@@ -37,9 +37,16 @@ O Horizonte Imóveis é uma aplicação web que permite a divulgação de imóve
 
 ---
 
-## ▶️ Como Executar
+## ▶️ Como executar o projeto
 
-```bash
-git clone https://github.com/seu-usuario/horizonte-imoveis.git
-npm install
-npm run dev
+1. Clone o repositório:
+- git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+2. Instale as dependências:
+- npm install
+
+3. Crie um projeto no Firebase e adicione um App Web.
+- Crie um arquivo .env na raiz do projeto e adicione as credenciais do Firebase (baseado no .env.example).
+
+4. Execute o projeto:
+- npm run dev
