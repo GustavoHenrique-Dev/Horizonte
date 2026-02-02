@@ -1,16 +1,52 @@
-# React + Vite
+# 🏢 Horizonte Imóveis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional com sistema administrativo para uma imobiliária, desenvolvido com foco em design moderno, responsividade e gerenciamento de imóveis.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Sobre o Projeto
+O Horizonte Imóveis é uma aplicação web que permite a divulgação de imóveis para **venda e locação**, além de um painel administrativo seguro para cadastro e gerenciamento dos imóveis.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+### Área Pública
+- Página inicial com imóveis em destaque
+- Listagem de imóveis
+- Página de detalhes do imóvel
+- Página institucional
+- Página de contato
+- Depoimentos de clientes
+- Dúvidas frequentes (FAQ)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Área Administrativa
+- Login de administrador
+- Cadastro, edição e exclusão de imóveis
+- Upload de imagens
+- Controle de status dos imóveis
+
+---
+
+## 🛠️ Tecnologias
+- React
+- Firebase Authentication
+- Cloud Firestore
+- Firebase Storage
+- CSS Modules
+
+---
+
+## ▶️ Como executar o projeto
+
+1. Clone o repositório:
+- git clone https://github.com/GustavoHenrique-Dev/Horizonte.git
+
+2. Instale as dependências:
+- npm install
+
+3. Crie um projeto no Firebase e adicione um App Web.
+- Crie um arquivo .env na raiz do projeto e adicione as credenciais do Firebase (baseado no .env.example).
+
+4. Execute o projeto:
+- npm run dev
