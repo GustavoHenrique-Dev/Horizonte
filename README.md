@@ -40,7 +40,7 @@ O Horizonte Imóveis é uma aplicação web que permite a divulgação de imóve
 ## ▶️ Como executar o projeto
 
 1. Clone o repositório:
-- git clone https://github.com/seu-usuario/nome-do-repositorio.git
+- git clone https://github.com/GustavoHenrique-Dev/Horizonte.git
 
 2. Instale as dependências:
 - npm install
