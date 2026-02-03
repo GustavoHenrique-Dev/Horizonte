@@ -3,3 +3,20 @@
     margin: 0px;
     padding: 0px;
 }
+
+html, body{
+    overflow-x: hidden;
+}
+
+:root{
+    --primary-color: #0B1C33;
+    --secondary-color: #FFFFFF;
+    --text-primary-color: #3C3C3C;
+    --text-secondary-color: #FFFFFF;
+    --text-tertiary-color: #000000;
+    --emphasis: #D4AF37;
+}
+
+a.active{
+    border-bottom: 2px solid var(--primary-color);
+}

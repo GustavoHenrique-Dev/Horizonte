@@ -1,0 +1,134 @@
+.header{
+    width: 100%;
+    position: relative;
+    padding: 17px 15px;
+}
+
+.brandBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand h1{
+    font-size: 1.1rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--text-primary-color);
+}
+
+.brandActions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-left: 2px solid gray;
+    padding-left: 20px;
+}
+
+.brandActionsButton{
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-primary-color);
+}
+
+.nav{
+    position: absolute;
+    z-index: 1000;
+    right: 0px;
+    top: 100%;
+    width: 70%;
+    height: calc(100vh - 44px);
+
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-right: none;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+    transition: 0.5s ease;
+    opacity: 0;
+    
+    font-family: "Roboto", sans-serif;
+}
+
+.navOpen{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.authMobile{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 2px solid var(--primary-color);
+    gap: 10px;
+    background-color: var(--primary-color);
+}
+
+.userImage{
+    padding: 7px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 100%;
+    color: var(--text-secondary-color);
+}
+
+.authMobileEnter{
+    padding: 2px 5px;
+    color: var(--text-secondary-color);
+    text-decoration: none;
+     
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.navBarLinks{
+    flex: 1;
+    padding: 15px 15px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navBarLink{
+    text-decoration: none;
+    color: var(--text-tertiary-color);
+    font-size: 1.1rem;
+    font-weight: 450;
+}
+
+.userActions{
+    padding: 10px 15px;
+    border-top: 2px solid var(--primary-color);
+}
+
+.userExit{
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-primary-color);
+    text-decoration: none;
+}
+
+.authActions{
+    display: none;
+}
+
+@media (min-width: 700px) {
+    .header{
+        padding: 17px 40px;
+    }
+
+    .nav{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1020px){
+    .header{
+        background-color: blue;
+    }
+}
