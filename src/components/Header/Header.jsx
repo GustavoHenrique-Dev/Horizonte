@@ -11,19 +11,14 @@ const Header = () => {
 
   return (
     <header className={Style.header}>
-      <div className={Style.brandBar}>
         <div className={Style.brand}>
           <h1>Horizonte</h1>
         </div>
         <div className={Style.brandActions}>
-          <button className={Style.brandActionsButton}>
-            <FontAwesomeIcon icon={faComment} />
-          </button>
           <button className={Style.brandActionsButton} onClick={() => setIsOpen(!isOpen)}>
             <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
           </button>
         </div>
-      </div>
 
       <div className={`${Style.nav} ${isOpen ? Style.navOpen : ""}`} >
         <div className={Style.authMobile}>
