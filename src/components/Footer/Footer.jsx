@@ -2,7 +2,7 @@ import Style from "./Footer.module.css"
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className={Style.footer}>Gustavo Henrique 2026 - Direitos Reservados @</div>
   )
 }
 
