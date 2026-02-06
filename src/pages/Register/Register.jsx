@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault()
 
     if(password !== confirmPassword){
-      setError("As senhas deve ser iguais.")
+      setError("As senhas devem ser iguais.")
       return
     }
       const user = {
@@ -26,7 +26,7 @@ const Register = () => {
     }
 
     const res = await createUser(user) 
-    console.log(res)
+    
 
     if(res){
     setName("")
@@ -68,9 +68,8 @@ const Register = () => {
             </label>
           </div>
 
-          <button type="submit" className={Style.submitButton}>Cadastrar</button>
-          <p>{error}</p>
-          <p>{authError}</p>
+          <button type="submit" className={`${Style.submitButton} ${loading ? Style.submitButtonLoading : ""}`}>{loading ? "Carregando..." : "Cadastrar"}</button>
+          {error && <p className={Style.error}>{error}</p>}
         </form>
 
         <p>Já tem uma conta? <Link className={Style.linkToLogin} to="/login">Entrar</Link></p>

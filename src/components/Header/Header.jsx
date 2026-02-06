@@ -8,72 +8,118 @@ import {
   faUser,
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAuthContext } from "../../context/AuthContext";
+import { useAuth } from "../../hooks/useAuth";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [navIsOpen, setNavIsOpen] = useState(false);
+  const [userMenuIsOpen, setUserMenuIsOpen] = useState(false);
   const { user } = useAuthContext();
+  const { logOut } = useAuth();
+  const firstLetter = user?.displayName?.trim().charAt(0).toUpperCase();
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setNavIsOpen(false);
+        setUserMenuIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <header className={Style.header}>
+    <header
+      ref={headerRef}
+      className={Style.header}
+    >
       <div className={Style.brand}>
         <h1>Horizonte</h1>
       </div>
       <div className={Style.brandActions}>
         <button
           className={Style.brandActionsButton}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setNavIsOpen(!navIsOpen)}
         >
-          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} />
+          <FontAwesomeIcon icon={navIsOpen ? faXmark : faBars} />
         </button>
       </div>
 
-      <div className={`${Style.nav} ${isOpen ? Style.navOpen : ""}`}>
+      <div className={`${Style.nav} ${navIsOpen ? Style.navOpen : ""}`}>
         <div className={Style.authMobile}>
           <div className={Style.userImage}>
-            <FontAwesomeIcon icon={faUser} />
+            <p className={Style.firstLetterUser}>
+              {firstLetter || (
+                <FontAwesomeIcon
+                  icon={faUser}
+                  className={Style.userAvatarIcon}
+                />
+              )}
+            </p>
           </div>
-          <Link
-            className={Style.authMobileEnter}
-            onClick={() => setIsOpen(false)}
-            to="/register"
-          >
-            Entrar ou Cadastrar
-          </Link>
+          <div className={Style.authMobileInfos}>
+            {!user && (
+              <Link
+                className={Style.authMobileEnter}
+                onClick={() => setNavIsOpen(false)}
+                to="/register"
+              >
+                Entrar ou Cadastrar
+              </Link>
+            )}
+            {user && (
+              <>
+                <h2>{user.displayName}</h2>
+                <p>{user.email}</p>
+              </>
+            )}
+          </div>
         </div>
+
         <div className={Style.navBarLinks}>
           <NavLink
             className={Style.navBarLink}
-            onClick={() => setIsOpen(false)}
+            onClick={() => setNavIsOpen(false)}
             to="/"
           >
             Início
           </NavLink>
           <NavLink
             className={Style.navBarLink}
-            onClick={() => setIsOpen(false)}
+            onClick={() => setNavIsOpen(false)}
             to="/properties"
           >
             Imóveis
           </NavLink>
           <NavLink
             className={Style.navBarLink}
-            onClick={() => setIsOpen(false)}
+            onClick={() => setNavIsOpen(false)}
             to="/about"
           >
             Sobre
           </NavLink>
           <NavLink
             className={Style.navBarLink}
-            onClick={() => setIsOpen(false)}
+            onClick={() => setNavIsOpen(false)}
             to="/contact"
           >
             Contato
           </NavLink>
         </div>
         <div className={Style.userActions}>
-          <button className={Style.userExit}>
+          <button
+            className={Style.userExit}
+            onClick={() => {
+              (logOut(), setNavIsOpen(false));
+            }}
+          >
             <FontAwesomeIcon icon={faArrowRightFromBracket} /> Sair
           </button>
         </div>
@@ -92,13 +138,39 @@ const Header = () => {
         )}
 
         {user && (
-          <div className={Style.userProfile}>
-            <FontAwesomeIcon icon={faUser} className={Style.userProfileIcon} />
-            <div className={Style.userProfileOptions}>
-              <p>Minha Conta</p>
-              <button>Sair</button>
+          <>
+            <div
+              className={Style.userAvatar}
+              onClick={() => setUserMenuIsOpen(!userMenuIsOpen)}
+            >
+              <p className={Style.firstLetterUser}>{firstLetter}</p>
             </div>
-          </div>
+            <div
+              className={`${Style.userMenu} ${userMenuIsOpen ? Style.userMenuOpen : ""}`}
+            >
+              <div className={Style.userInfos}>
+                <div className={Style.userAvatar}>
+                  <p className={Style.firstLetterUser}>{firstLetter}</p>
+                </div>
+                <div className={Style.userInfo}>
+                  <h2>{user.displayName}</h2>
+                  <p>{user.email}</p>
+                </div>
+              </div>
+              <div className={Style.userOptions}>
+                <Link className={Style.linkToAccount}>
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className={Style.userAvatarIcon}
+                  />{" "}
+                  Minha Conta
+                </Link>
+                <button onClick={logOut}>
+                  <FontAwesomeIcon icon={faArrowRightFromBracket} /> Sair
+                </button>
+              </div>
+            </div>
+          </>
         )}
       </div>
     </header>

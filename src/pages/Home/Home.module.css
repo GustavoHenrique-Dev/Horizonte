@@ -1,5 +1,13 @@
 .div{
     width: 100;
+
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  background-color: var(--secondary-color);
 }
 
 .div img{

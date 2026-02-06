@@ -34,5 +34,9 @@ export const useAuth = () => {
     }
   };
 
-  return { auth, createUser, error, loading };
+  const logOut = () => {
+    signOut(auth)
+  }
+
+  return { auth, createUser, error, loading, logOut };
 };

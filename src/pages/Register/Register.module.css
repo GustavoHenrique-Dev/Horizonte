@@ -1,110 +1,130 @@
-.container{
-    background-color: var(--secondary-color);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+
+  margin: 90px 0px;
+
+  background-color: var(--secondary-color);
 }
 
-.registerInfo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    color: var(--text-primary-color);
+.registerInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-primary-color);
 }
 
-.registerInfo h1{
-    font-size: 2rem;
-    font-family: "Montserrat", sans-serif;
+.registerInfo h1 {
+  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
 }
 
-.registerInfo p{
-    width: 85%;
-    text-align: center;
-    font-size: 1rem;
-    font-family: "Roboto", sans-serif;
+.registerInfo p {
+  width: 85%;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
 }
 
-.registerFormContainer{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.registerFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 
-    gap: 30px;
+  width: 100%;
 }
 
-.registerFormContainer p{
-    color: var(--text-primary-color);
-    font-family: "Roboto", sans-serif;
+.registerFormContainer p {
+  font-family: "Roboto", sans-serif;
+
+  color: var(--text-primary-color);
 }
 
-.linkToLogin{
-    color: var(--primary-color);
-    font-weight: 500;
-    text-decoration: none;
+.linkToLogin {
+  font-weight: 500;
+
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.registerForm{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 
-    padding: 40px 20px;
-    border-radius: 10px;
+  width: 80%;
+  padding: 40px 20px;
+  border-radius: 10px;
 }
 
-.registerFormInputs{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+.registerFormInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
 }
 
-.registerFormInputs label{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    color: var(--text-primary-color);
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    gap: 3px;
+.registerFormInputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: var(--text-primary-color);
 }
 
-.registerFormInputs label input{
-    background-color: var(--secondary-color);
-    border: 2px solid var(--text-primary-color);
-    border-radius: 5px;
-    padding: 7px;
-    outline: none;
-    font-size: 1rem;
+.registerFormInputs label input {
+  padding: 7px;
+  border: 2px solid var(--text-primary-color);
+  border-radius: 5px;
+
+  background-color: var(--secondary-color);
+  font-size: 1rem;
+  outline: none;
 }
 
-.submitButton{
-    font-family: "Montserrat", sans-serif;
-    background-color: var(--emphasis);
-    width: 100%;
-    padding: 10px;
-    border-radius: 18px;
-    color: var(--primary-color);
-    font-size: 1rem;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
+.submitButton {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 18px;
+  background-color: var(--emphasis);
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
-@media (min-width: 700px){
-    .registerForm{
-        max-width: 500px;
-    }
+.submitButtonLoading {
+  background-color: #c4b587;
+}
+
+.error {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+
+  background-color: rgb(255, 150, 150);
+  text-align: center;
+}
+@media (min-width: 700px) {
+  .registerForm {
+    max-width: 500px;
+  }
 }
