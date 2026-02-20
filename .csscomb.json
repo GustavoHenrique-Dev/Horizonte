@@ -1,0 +1,39 @@
+{
+  "always-semicolon": true,
+  "block-indent": "  ",
+  "color-case": "lower",
+  "color-shorthand": true,
+  "element-case": "lower",
+  "eof-newline": true,
+  "leading-zero": false,
+  "quotes": "double",
+  "remove-empty-rulesets": true,
+  "space-after-colon": " ",
+  "space-before-colon": "",
+  "space-after-combinator": " ",
+  "space-before-combinator": " ",
+  "strip-spaces": true,
+  "unitless-zero": true,
+  "vendor-prefix-align": true,
+
+  "sort-order": [
+    ["position", "top", "right", "bottom", "left", "z-index"],
+
+    ["display", "flex", "flex-direction", "justify-content", "align-items", "gap"],
+
+    ["width", "height", "max-width", "min-width", "max-height", "min-height"],
+
+    ["margin", "margin-top", "margin-right", "margin-bottom", "margin-left"],
+    ["padding", "padding-top", "padding-right", "padding-bottom", "padding-left"],
+
+    ["border", "border-top", "border-right", "border-bottom", "border-left", "border-radius"],
+
+    ["background", "background-color", "background-image"],
+
+    ["font", "font-size", "font-family", "font-weight", "line-height", "text-align"],
+
+    ["opacity", "transform", "transition"]
+  ]
+
+}
+

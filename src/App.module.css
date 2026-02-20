@@ -1,0 +1,21 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pages{
+    flex: 1;
+    display: flex;
+    padding-top: 58px;
+}
+
+@media (min-width: 1020px) {
+    .pages{
+        padding-top: 67px;
+    }
+
+    .pagesUserLoad{
+        padding-top: 58px;
+    }
+}

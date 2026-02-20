@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.loginInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--text-primary-color);
+}
+
+.loginInfo h1 {
+  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.loginInfo p {
+  width: 80%;
+
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  width: 100%;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: 80%;
+
+  padding: 40px 20px;
+
+  border-radius: 10px;
+}
+
+.loginFormInputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+}
+
+.loginFormInputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  width: 100%;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+
+  color: var(--text-primary-color);
+}
+
+.loginFormInputs label.labelError {
+  color: rgb(243, 95, 95);
+}
+
+.loginFormInputs label input {
+  padding: 7px;
+
+  border: 2px solid var(--text-primary-color);
+  border-radius: 5px;
+
+  background-color: var(--secondary-color);
+
+  font-size: 1rem;
+
+  outline: none;
+}
+
+.loginFormInputs label input.inputError {
+  border: 2px solid rgb(243, 95, 95);
+}
+
+.submitButton {
+  width: 100%;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 18px;
+
+  background-color: var(--emphasis);
+
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.error {
+  width: 100%;
+
+  padding: 8px;
+
+  border-radius: 10px;
+
+  background-color: rgb(255, 150, 150);
+
+  text-align: center;
+}
+
+.loginFormContainer p {
+  font-family: "Roboto", sans-serif;
+
+  color: var(--text-primary-color);
+}
+
+.linkToRegister {
+  font-weight: 500;
+
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+@media (min-width: 600px) {
+  .loginForm {
+    max-width: 400px;
+  }
+
+  .loginInfo p {
+    width: 100%;
+  }
+}

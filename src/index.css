@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color: #0B1C33;
+    --secondary-color: #FFFFFF;
+    --text-primary-color: #3C3C3C;
+    --text-secondary-color: #FFFFFF;
+    --text-tertiary-color: #000000;
+    --emphasis: #D4AF37;
+}
+
+a.active{
+    background-color: #e4e4e4;
+}
+
+@media (min-width: 1020px) {
+    a.active{
+    background: none;
+    border-bottom: 2px solid var(--primary-color);
+}
+}
